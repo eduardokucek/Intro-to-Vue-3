@@ -135,6 +135,11 @@ p {
   width: 50%;
 }
 
+.sizes {
+  display: flex;
+  gap: 1rem;
+}
+
 .review-form {
   display: flex;
   flex-direction: column;

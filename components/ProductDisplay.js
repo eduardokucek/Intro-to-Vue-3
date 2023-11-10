@@ -37,7 +37,7 @@ app.component("product-display", {
           ></div>
         </div>
 
-        <ul>
+        <ul class="sizes">
           <li v-for="size in sizes">{{ size }}</li>
         </ul>
 
@@ -85,14 +85,10 @@ app.component("product-display", {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
     removeFromCart() {
-      if (this.cart <= 0) {
-        this.cart;
-      } else {
-        this.cart -= 1;
-      }
+      this.$emit("remove-from-cart", this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;
