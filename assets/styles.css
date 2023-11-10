@@ -48,6 +48,12 @@ body {
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
 }
 
+.colors {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
 .color-circle {
   width: 50px;
   height: 50px;
@@ -63,6 +69,7 @@ body {
 
 h1 {
   font-size: 50px;
+  height: 110px;
 }
 
 h3 {

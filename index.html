@@ -25,26 +25,29 @@
             <img :src="image" alt="" />
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
-            <!-- <p v-if="inStock">In Stock</p>
-            <p v-else>Out of Stock</p> -->
-            <!-- <p v-show="inStock">In Stock</p> -->
-            <p v-if="inventory > 10">In Stock</p>
-            <p v-else-if="inventory <= 10 && inventory > 0">
-              Almost sold out...
-            </p>
+            <!-- <h1>{{ brand + ' ' + product }}</h1> -->
+            <h1>{{ title + '' + onSale }}</h1>
+            <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
-            <p v-if="onSale">On Sale!</p>
+
+            <!-- <p v-show="inStock">In Stock</p>
+            <p v-if="quantity > 10">In Stock</p>
+            <p v-else-if="quantity <= 10 && quantity > 0">Almost sold out...</p>
+            <p v-else>Out of Stock</p> -->
+            <!-- <p v-if="onSale">On Sale!</p> -->
+
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div
-              class="color-circle"
-              :style="{ background: variant.color }"
-              v-for="variant in variants"
-              :key="variant.id"
-              @mouseover="updateImage(variant.image)"
-            ></div>
+            <div class="colors">
+              <div
+                class="color-circle"
+                :style="{ background: variant.color }"
+                @mouseover="updateVariant(index)"
+                v-for="(variant, index) in variants"
+                :key="variant.id"
+              ></div>
+            </div>
             <ul>
               <li v-for="size in sizes">{{ size }}</li>
             </ul>
