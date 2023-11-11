@@ -9,13 +9,8 @@ const app = Vue.createApp({
     addToCart(id) {
       this.cart.push(id);
     },
-    removeFromCart(id) {
+    removeFromCart() {
       this.cart.pop();
-      // if (this.cart <= 0) {
-      //   this.cart;
-      // } else {
-      //   this.cart -= 1;
-      // }
     },
   },
 });
